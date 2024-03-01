@@ -1,7 +1,7 @@
 <h1> PUBLICACOES </h1>
 
 <% @blog_posts.each do |blog_post| %>
-    <div class="p-3 transition-all duration-150 ease-in-out border rounded shadow">
+    <div class="p-3 my-2 transition-all duration-150 ease-in-out border rounded shadow hover:shadow-md">
         <h2><%= link_to blog_post.title, blog_post %></h2>
         <p><%= blog_post.body %></p>
     </div>
