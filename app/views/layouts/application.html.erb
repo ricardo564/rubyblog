@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="flex flex-col justify-center w-screen px-2 mx-auto prose">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
     <div>
       <% if user_signed_in? %>
-        <%= link_to "New Blog post", new_blog_post_path %>
-        <%= button_to "Log out", destroy_user_session_path, method: :delete %>
+      <div class="flex items-center gap-4">
+        <%= link_to "New Blog post", new_blog_post_path, class:"p-3 transition-all duration-150 ease-in-out border rounded shadow hover:bg-blue-500 hover:text-white hover:shadow-none" %>
+        <%= button_to "Log out", destroy_user_session_path, method: :delete, class:"p-3 transition-all duration-150 ease-in-out border rounded shadow hover:bg-blue-500 hover:text-white hover:shadow-none" %>
+      </div>
       <% end %>
     </div>
 
